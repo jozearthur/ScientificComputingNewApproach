@@ -1,0 +1,128 @@
+\documentclass[paper=9in:6in,pagesize=pdftex,headinclude=on,footinclude=on,10pt,bibtotoc,pointlessnumbers,normalheadings,DIV=9,twoside=false]{scrbook}
+
+\areaset[0.50in]{4.5in}{8in}
+\KOMAoptions{DIV=last}
+
+\usepackage{trajan}
+ 
+\usepackage[utf8x]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{upgreek}
+\usepackage{float}
+\usepackage[normal,font={footnotesize,it}]{caption}
+
+\usepackage[sc]{mathpazo}
+\linespread{1.05} 
+
+
+\usepackage[english]{babel}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{MnSymbol}
+\usepackage{wasysym}
+\usepackage{amsfonts}
+\newtheorem{theorem}{Theorem}
+\renewcommand\qedsymbol{$\blacksquare$}
+
+
+\title{Probalibility}
+
+\begin{document}
+\date{}
+
+\maketitle
+
+\section{ The language of probability \\} 
+
+\begin{large} 
+ \emph{Kolmogorov definitions:}
+\end{large} }
+\begin{itemize} 
+\item We define $\omega$ as the set of all possible elementary events. $\omega$ is called the sample space of the experiment
+
+\item We define $\Sigma$ as a set of subsets of $\omega$ , $\Sigma$ is a set of random events (combination of elementary events) with the following properties:
+
+\subitem if  $A,B$ $\in$   $\Sigma$ then $A \cap  B$ and $A \cup B $ $\in$ $\Sigma$
+\subitem $\omega$ $\in$ $\Sigma$
+\subitem $\emptyset$ $\in$ $\Sigma$
+
+\item Let $A$ $\in$ $\Sigma$, we define the Probability of $A$ as a non negative real number, that can be assigned for all $A$ $\in$ $\Sigma$. $\exists$ $P(A)$$\geq0 $ with the following properties:
+
+\subitem $ P(\omega)=1$
+
+\subitem  let $A,B$ $\in$   $\Sigma$, if $A \cap B = \emptyset$ $\implies$ $P(A$\cup$B) = P(A) + P(B) $}
+\subitem
+
+
+\end{itemize}
+
+
+
+\begin{large}
+\emph{ Alternative definitions:}
+\end{large} }
+\begin{itemize} 
+\item We define $\omega$ as the set of all possible elementary events 
+
+\item We define $\Sigma$ as a $\sigma$-algebra  of random events (combination of elementary events) with the following properties:
+
+\subitem $\Sigma$ contains at least one subset of $\omega$
+\subitem if  $A$ $\in$   $\Sigma$ $\implies$ $\omega$/$A$ $\in$ $\Sigma$
+\subitem if $A_1, A_2 \dots{} A_n \in \Sigma$  $\Longrightarrow$  $ \bigcup\limits_{i = 1 }^n A_i$ $\in \Sigma$
+
+\item An arbitrary element of $\Sigma$ is called a random event
+
+\item Let $A$ $\in$ $\Sigma$, we define the Probability of $A$ as a non negative real number, that can be assigned for all $A$ $\in$ $\Sigma$. $\exists$ $P(A)$$\geq0 $ with the following properties:
+
+\subitem $ P(\omega)$=1 
+
+\subitem  let $A,B$ $\in$   $\Sigma$, if $A \cap B = \emptyset$ $\Longrightarrow$ $P(A$\cup$B) = P(A) + P(B) $ \\}
+
+
+\end{itemize}
+
+\begin{theorem} 
+  let $A \in \Sigma$ so $P(A)+P(A^c)=1 $,  \forall $ A \in \Sigma$  where $A^c$ is the logical negation of A\\
+  \end{theorem}
+  
+  \begin{proof}  Since $\omega$ is our sample space $A^c$ is defined as $\omega/A$ we have: 
+  
+  \begin{center}
+  $P(A)+P(A^c)=P(A)+P(\omega/A)=P(\omega)$
+  \end{center}
+  
+  By the definition of probability $P(\omega)=1$, so we have $P(A)+P(A^c)=1  $\\
+  \end{proof}
+  
+  \begin{theorem} The probability of the empty set is 0, $P(\emptyset)=0$\\
+  \end{theorem}
+  
+  \begin{proof} Let $A \in \Sigma$, since $A\cup\emptyset=A$ we have:
+  
+  \begin{center} $P(A\cup\emptyset)=P(A)+P(\emptyset)=P(A)$\\ $P(\emptyset)=P(A)-P(A)=0$
+  
+  \end{proof}
+  
+  \begin{theorem} Let $A_1, A_2 \dots{} A_N \in \Sigma$, if $A_i$$\cap$$A_j=\emptyset$ \forall i,j$  1 $\leq$ i,j $ \leq$ N so we have P(\bigcup\limits_{i = 1 }^N A_i) = 	\sum_{i=1}^{N} P(A_i)$\\
+  \end{theorem}
+  
+  \begin{proof}The equation is true for N=2, since this reduce to the case in the definition of probability. \\
+  
+ Assume that $P(\bigcup\limits_{i = 1 }^N A_i) = 	\sum_{i=1}^{N} P(A_i)$ is true for $N$. Since $A_{N+1} \cap \bigcup\limits_{i = 1 }^N A_i=\emptyset$ we have:
+ 
+ \begin{center} $P(\bigcup\limits_{i = 1 }^N A_i)+P(A_{N+1})=\sum_{i=1}^{N} P(A_i)$  +P(A_{N+1}) =\sum_{i=1}^{N+1} P(A_i)$ \\ $P(\bigcup\limits_{i = 1 }^N A_i)+P(A_{N+1})=$P([\bigcup\limits_{i = 1 }^N A_i] \cup A_{N+1}) = $P(\bigcup\limits_{i = 1 }^{N+1} A_i)$ hence:\\ $P(\bigcup\limits_{i = 1 }^{N+1} A_i)=\sum_{i=1}^{N+1} P(A_i)$ $\forall N \in  \mathbb{N}$$
+ 
+ \end{proof}
+
+
+
+
+\end{medium}
+
+
+
+
+
+
+
+\end{document}
