@@ -1,0 +1,72 @@
+\documentclass[paper=9in:6in,pagesize=pdftex,headinclude=on,footinclude=on,10pt,bibtotoc,pointlessnumbers,normalheadings,DIV=9,twoside=false]{scrbook}
+
+\areaset[0.50in]{4.5in}{8in}
+\KOMAoptions{DIV=last}
+
+\usepackage{trajan}
+ 
+\usepackage[utf8x]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{upgreek}
+\usepackage{float}
+\usepackage[normal,font={footnotesize,it}]{caption}
+
+\usepackage[sc]{mathpazo}
+\linespread{1.05} 
+
+
+\usepackage[english]{babel}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{MnSymbol}
+\usepackage{wasysym}
+\usepackage{amsfonts}
+\newtheorem{theorem}{Theorem}
+\renewcommand\qedsymbol{$\blacksquare$}
+
+
+\begin{document}
+\date{}
+
+
+\begin{large} 
+ \textbf{Exercise}
+\end{large} 
+\begin{itemize} 
+\item Find the entropy a normal distribution with mean $\mu$  and deviation $ \sigma ^2$. 
+\end{itemize}
+
+\begin{large}
+\textit{Solution:\\}
+\end{large}
+
+\begin{text}
+
+$H[P]=- \int_{-\infty}^{\infty}P(x) \log{P(x)} dx =$
+$-\int_{-\infty}^{\infty} \frac{1}{\sqrt{2\pi}\sigma} e^{\frac{-(x-\mu)^2}{2\sigma^2}} log{[\ \frac{1}{\sqrt{2\pi}\sigma} e^{\frac{-(x-\mu)^2}{2\sigma^2}}]\  }  dx $ 
+
+\end{text}
+
+\begin{text}
+
+$H[P]= \frac{1}{2\sigma^2}\int_{-\infty}^{\infty} \frac{(x-\mu)^2}{\sqrt{2\pi}\sigma} e^{\frac{-(x-\mu)^2}{2\sigma^2}}dx + \frac{log{2\pi}\sigma^2}{2} \int_{-\infty}^{\infty}  \frac{1}{\sqrt{2\pi}\sigma} e^{\frac{-(x-\mu)^2}{2\sigma^2}}dx$ \\
+\end{text}
+
+\begin{text}
+The first integral is just the definition of deviation so is equal to $\sigma^2$ and the second integral is 1 by definition of normalization. So we have: \\
+\end{text}
+
+\begin{text}
+
+$H[P] = \frac{1}{2}(1 + \log{2 \pi \sigma^2)}$
+
+\end{text}
+
+
+
+
+
+
+
+
+\end{document}
