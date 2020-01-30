@@ -1,0 +1,104 @@
+\documentclass[paper=9in:6in,pagesize=pdftex,headinclude=on,footinclude=on,10pt,bibtotoc,pointlessnumbers,normalheadings,DIV=9,twoside=false]{scrbook}
+
+\areaset[0.50in]{4.5in}{8in}
+\KOMAoptions{DIV=last}
+
+\usepackage{trajan}
+ 
+\usepackage[utf8x]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{upgreek}
+\usepackage{float}
+\usepackage[normal,font={footnotesize,it}]{caption}
+
+\usepackage[sc]{mathpazo}
+\linespread{1.05} 
+
+
+\usepackage[english]{babel}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{MnSymbol}
+\usepackage{wasysym}
+\usepackage{amsfonts}
+\newtheorem{theorem}{Theorem}
+\renewcommand\qedsymbol{$\blacksquare$}
+
+
+\begin{document}
+\date{}
+
+
+\begin{large} 
+ \textbf{Variance of a Normal Distribution \\}
+\end{large} 
+
+\begin{text}
+In this section we will prove that if $\frac{1}{\sqrt{2\pi}\sigma}  e^{\frac{-(x-\mu)^2}{2\sigma^2}} $ is a probability distribution then your variance is given by $\sigma^2$. Using the definition of Var(x):\\
+\end{text}
+
+\begin{center}
+    $Var(x) = \int\limits_{-\infty}^{\infty} (x-\mu)^2 \frac{1}{\sqrt{2\pi}\sigma}  e^{\frac{-(x-\mu)^2}{2\sigma^2}}dx $
+\end{center}
+
+\begin{text}
+We now introduce two variables: $u=x-\mu$ and $a=\frac{1}{2\sigma^2}$. We know that:
+\end{text}
+
+\begin{center}
+     $Var(x) = \frac{1}{\sqrt{2\pi}\sigma} \int\limits_{-\infty}^{\infty} u^2   e^{-au^2} du $ \ \\
+     \ \\
+     \ \\
+     $\frac{d}{da} e^{-au^2} = -u^2   e^{-au^2} dx $ \\ 
+     \ \\
+     
+     $Var(x) = -\frac{1}{\sqrt{2\pi}\sigma} \int\limits_{-\infty}^{\infty} \frac{d}{da} e^{-au^2} du =-  \frac{1}{\sqrt{2\pi}\sigma} \frac{d}{da} \int\limits_{-\infty}^{\infty} e^{-au^2} du $ \\
+\end{center}
+
+\begin{center}
+Lets call $I = \int\limits_{-\infty}^{\infty} e^{-au^2} du \implies I^2 = \int\limits_{-\infty}^{\infty} e^{-au^2} du \int\limits_{-\infty}^{\infty} e^{-av^2} dv $  \\
+\end{center}
+
+\begin{text}
+We now introduce an other 2 variables $r^2=u^2+v^2$ and $\theta = \arctan \frac{v}{u}$ hence: \\ 
+\end{text}
+
+\begin{center}
+    $I^2 = \int\limits_{-\infty}^{\infty} \int\limits_{-\infty}^{\infty} e^{-a(u^2+v^2)} dxdy = \int\limits_{0}^{\infty}\int\limits_{0}^{2\pi} r e^{-ar^2}drd\theta = \int\limits_{0}^{2\pi} d\theta \int\limits_{0}^{\infty} re^{-ar^2} dr$
+\end{center}
+
+
+\begin{text}
+Let be $h=-ar^2 \implies 2ardr = -dh$, so we have:
+\end{text}
+
+\begin{center}
+    $I^2 = -\pi \int\limits_{0}^{-\infty}\frac{1}{a} e^h dh = \frac{\pi}{a}$ \\
+    
+    \ \\
+    \ \\
+    
+   $ \int\limits_{-\infty}^{\infty} e^{-au^2} du = \sqrt{\frac{\pi}{a}}$ \\
+\end{center}
+
+\begin{text}
+So we have:
+\end{text}
+
+\begin{center}
+    $Var(x) = -\frac{1}{\sqrt{2\pi}\sigma} \frac{d}{da} \int\limits_{-\infty}^{\infty} e^{-au^2} du = - \frac{1}{\sqrt{2\pi}\sigma} \frac{d}{da} \sqrt{\frac{\pi}{a}} = \frac{a^{-\frac{3}{2}}}{2\sqrt{2} \sigma} = \frac{(2\sigma^2)^{\frac{3}{2}}}{2\sqrt{2} \sigma}  $ \ \\
+    
+    \ \\
+    \ \\
+    
+    $Var(x) = \sigma^2$ \\
+    \ \\
+    
+    \hfill \qedsymbol
+    
+\end{center}
+
+
+
+
+\end{document}
