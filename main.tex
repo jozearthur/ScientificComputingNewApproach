@@ -1,0 +1,82 @@
+\documentclass[paper=9in:6in,pagesize=pdftex,headinclude=on,footinclude=on,10pt,bibtotoc,pointlessnumbers,normalheadings,DIV=9,twoside=false]{scrbook}
+
+\areaset[0.50in]{4.5in}{8in}
+\KOMAoptions{DIV=last}
+
+\usepackage{trajan}
+ 
+\usepackage[utf8x]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{upgreek}
+\usepackage{float}
+\usepackage[normal,font={footnotesize,it}]{caption}
+
+\usepackage[sc]{mathpazo}
+\linespread{1.05} 
+
+
+\usepackage[english]{babel}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{MnSymbol}
+\usepackage{wasysym}
+\usepackage{amsfonts}
+\newtheorem{theorem}{Theorem}
+\renewcommand\qedsymbol{$\blacksquare$}
+
+
+\begin{document}
+\date{}
+
+
+\begin{large} 
+ \textbf{Exercise}
+\end{large} 
+\begin{itemize} 
+\item Solve the difference equation $y_{n+1} =a y_n + b$ for  initial value equal $y_0$. \\
+\end{itemize}
+
+\begin{large}
+\textit{Solution:\\}
+\end{large}
+
+ 
+\begin{text}
+Lets now analyse the behavior of the equation for 1, 2 ,3 ... n:
+\end{text}
+
+\begin{center}
+$y_1 = ay_0 +b$ \\
+$y_2 = a^2y_o +ab +b$ \\
+$y_3 = a^3y_0 + a^2b + ab + b$ \\
+\ \\
+$y_n = a^n y_0 + \sum\limits_{i=0}^{n-1}a^ib $
+\end{center}
+
+\begin{text}
+Since the sum:  $\sum\limits_{i=0}^{n-1}a^ib $ is a geometrical progression sum, we know that: \\ 
+\end{text}
+
+\begin{center}
+$\sum\limits_{i=0}^{n-1}a^ib = \frac{1-a^n}{1-a} b$ \\
+\end{center}
+
+
+
+\begin{text}
+So the final solution is: 
+\end{text}
+
+\begin{center}
+$y_n = a^ny_0 + \frac{1-a^n}{1-a} b$
+\end{center}
+
+
+
+
+
+
+
+
+
+\end{document}
