@@ -1,0 +1,90 @@
+\documentclass[paper=9in:6in,pagesize=pdftex,headinclude=on,footinclude=on,10pt,bibtotoc,pointlessnumbers,normalheadings,DIV=9,twoside=false]{scrbook}
+
+\areaset[0.50in]{4.5in}{8in}
+\KOMAoptions{DIV=last}
+
+\usepackage{trajan}
+ 
+\usepackage[utf8x]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{upgreek}
+\usepackage{float}
+\usepackage[normal,font={footnotesize,it}]{caption}
+
+\usepackage[sc]{mathpazo}
+\linespread{1.05} 
+
+
+\usepackage[english]{babel}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{MnSymbol}
+\usepackage{wasysym}
+\usepackage{amsfonts}
+\newtheorem{theorem}{Theorem}
+\renewcommand\qedsymbol{$\blacksquare$}
+
+
+\begin{document}
+\date{}
+
+
+\begin{large} 
+ \textbf{Exercise}
+\end{large} 
+\begin{itemize} 
+\item Let be the probability distribution $P(m\mid pn) = \frac{n!}{m!(n-m)!} \cdot p^m q^{n-m}$ where p is a parameter $\in$ [0,1] and $p+q=1$. Find the expected values $<m>$ and $<m^2>$.
+\end{itemize}
+
+\begin{large}
+\textit{Solution:\\}
+\end{large}
+
+ \begin{center}
+    $<m> = \sum\limits_{m=0}^{n} \frac{n!}{m!(n-m)!} \cdot m p^m q^{n-m}$ \\
+ \end{center}
+ 
+\begin{text}
+We know that $m p^m = p \frac{\partial}{\partial p} p^m $, so we have: \\ 
+\end{text}
+
+\begin{center}
+$<m> = \sum\limits_{m=0}^{n} \frac{n!}{m!(n-m)!} \cdot p \frac{\partial}{\partial p} p^m q^{n-m} = p \frac{\partial}{\partial p} \sum\limits_{m=0}^{n} \frac{n!}{m!(n-m)!} \cdot  p^m q^{n-m} $ \\
+\end{center}
+
+\begin{text}
+Using the binomial expansion  $\sum\limits_{m=0}^{n} \frac{n!}{m!(n-m)!} \cdot  p^m q^{n-m} = (p+q)^n  $: \\
+\end{text}
+
+\begin{center}
+$<m>= p \frac{\partial}{\partial p} (p+q)^n = np(p+q)^{n-1} $\\
+\ \\
+
+$p+q=1 \implies <m> = np$ \\
+\end{center}
+
+
+\begin{center}
+\ \\ $<m^2> = \sum\limits_{m=0}^{n} \frac{n!}{m!(n-m)!} \cdot m^2 p^m q^{n-m}$ \\
+\end{center}
+
+\begin{text}
+We know that $m^2 p^m = p^2 \frac{\partial^2}{\partial p^2} p^m $, so we have: \\ 
+\end{text}
+
+\begin{center}
+$<m> = \sum\limits_{m=0}^{n} \frac{n!}{m!(n-m)!} \cdot p^2 \frac{\partial^2}{\partial p^2} p^m q^{n-m} = p^2 \frac{\partial^2}{\partial p^2} \sum\limits_{m=0}^{n} \frac{n!}{m!(n-m)!} \cdot  p^m q^{n-m} =  p^2 \frac{\partial^2}{\partial p^2} (p+q)^n$ \\
+\ \\
+
+$<m^2> = n^2p^2 + np(1-p)$ 
+\end{center}
+
+
+
+
+
+
+
+
+
+\end{document}
