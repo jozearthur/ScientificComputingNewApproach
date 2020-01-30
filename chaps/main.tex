@@ -1,0 +1,81 @@
+\documentclass[paper=9in:6in,pagesize=pdftex,headinclude=on,footinclude=on,10pt,bibtotoc,pointlessnumbers,normalheadings,DIV=9,twoside=false]{scrbook}
+
+\areaset[0.50in]{4.5in}{8in}
+\KOMAoptions{DIV=last}
+
+\usepackage{trajan}
+ 
+\usepackage[utf8x]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{upgreek}
+\usepackage{float}
+\usepackage[normal,font={footnotesize,it}]{caption}
+
+\usepackage[sc]{mathpazo}
+\linespread{1.05} 
+
+
+\usepackage[english]{babel}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{MnSymbol}
+\usepackage{wasysym}
+\usepackage{amsfonts}
+\newtheorem{theorem}{Theorem}
+\renewcommand\qedsymbol{$\blacksquare$}
+
+
+
+
+\begin{document}
+\date{}
+
+
+
+
+\begin{theorem} 
+  let $A \in \Sigma$ so $P(A)+P(A^c)=1 $, $ \forall $ A $\in \Sigma$  where $A^c$ is the logical negation of A\\
+  \end{theorem}
+  
+  \begin{proof}  Since $\omega$ is our sample space $A^c$ is defined as $\omega/A$ we have: 
+  
+  \begin{center}
+  $P(A)+P(A^c)=P(A)+P(\omega/A)=P(\omega)$
+  \end{center}
+  
+  By the definition of probability $P(\omega)=1$, so we have $P(A)+P(A^c)=1  $\\
+  \end{proof}
+  
+  \begin{theorem} The probability of the empty set is 0, $P(\emptyset)=0$\\
+  \end{theorem}
+  
+  \begin{proof} Let $A \in \Sigma$, since $A\cup\emptyset=A$ we have:
+  
+  \begin{center} $P(A\cup\emptyset)=P(A)+P(\emptyset)=P(A)$\\ $P(\emptyset)=P(A)-P(A)=0$
+  \end{center}
+  \end{proof}
+  
+  \begin{theorem} Let $A_1, A_2 \dots{} A_N \in \Sigma$, if $A_i$ $\cap$ $A_j=\emptyset$ $\forall i,j$  1 $\leq$ i,j $ \leq$ N so we have $P(\bigcup\limits_{i = 1 }^N A_i) = 	\sum_{i=1}^{N} P(A_i)$\\
+  \end{theorem}
+  
+  \begin{proof}The equation is true for N=2, since this reduce to the case in the definition of probability. \\
+  
+ Assume that $P(\bigcup\limits_{i = 1 }^N A_i) = 	\sum_{i=1}^{N} P(A_i)$ is true for $N$. Since $A_{N+1} \cap \bigcup\limits_{i = 1 }^N A_i=\emptyset$ we have:
+ 
+ \begin{center} $P(\bigcup\limits_{i = 1 }^N A_i)+P(A_{N+1})=\sum_{i=1}^{N} P(A_i)  +P(A_{N+1}) =\sum_{i=1}^{N+1} P(A_i)$ \\ $P(\bigcup\limits_{i = 1 }^N A_i)+P(A_{N+1})= P([\bigcup\limits_{i = 1 }^N A_i] \cup A_{N+1}) = P(\bigcup\limits_{i = 1 }^{N+1} A_i)$ hence:\\ $P(\bigcup\limits_{i = 1 }^{N+1} A_i)=\sum_{i=1}^{N+1} P(A_i)$ $\forall N \in  \mathbb{N}$
+
+ 
+ \end{center}
+
+
+
+
+\end{proof}
+
+
+
+
+
+
+
+\end{document}
