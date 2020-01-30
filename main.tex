@@ -1,0 +1,81 @@
+\documentclass[paper=9in:6in,pagesize=pdftex,headinclude=on,footinclude=on,10pt,bibtotoc,pointlessnumbers,normalheadings,DIV=9,twoside=false]{scrbook}
+
+\areaset[0.50in]{4.5in}{8in}
+\KOMAoptions{DIV=last}
+
+\usepackage{trajan}
+ 
+\usepackage[utf8x]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{upgreek}
+\usepackage{float}
+\usepackage[normal,font={footnotesize,it}]{caption}
+
+\usepackage[sc]{mathpazo}
+\linespread{1.05} 
+
+
+\usepackage[english]{babel}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{MnSymbol}
+\usepackage{wasysym}
+\usepackage{amsfonts}
+\newtheorem{theorem}{Theorem}
+\renewcommand\qedsymbol{$\blacksquare$}
+\usepackage{indentfirst}
+
+
+\begin{document}
+\date{}
+
+\begin{center}
+\begin{large}
+ \textbf{Change of Variables \\}
+\end{large}
+\end{center}
+
+\begin{text} 
+ In this section we are going to show a technique to find distribution of interconnected variables. Let be $Y$ and $X$ random variables correlated by $Y=f(x)$ where $f$ is invertible and monotonic. With the distribution of $X$ is well known, we want to find the distribution of $Y$.
+\end{text}
+
+\begin{center}
+    $P(X \cap Y ) = P(X) \cdot P(Y \mid X$) \\
+\end{center}
+
+\begin{text}
+If $X$ is given, then $Y$ can only be $f(x)$ so $ P(Y \mid X) = \delta (f(x) - y )$, hence:
+\end{text}
+
+\begin{center}
+    $P(Y) = \int\limits_{-\infty}^{\infty} P(X \cap Y ) \cdot dx =\int\limits_{-\infty}^{\infty} P(X) \cdot \delta (f(x) - y  ) \cdot dx $ \\
+\end{center}
+
+\begin{text}
+Lets be $U= f(x)$ $\implies \frac{dU}{dx} = f{'}(x) $, so we have: \\
+\end{text}
+
+\begin{center}
+    $P(Y) = \int\limits_{-\infty}^{\infty} P(X) \cdot \delta ( f(x)-y  ) \cdot dx = \int\limits_{-\infty}^{\infty} P(X) \cdot \frac{1}{f^{'}(x)} \cdot \delta ( U-y  ) \cdot dU $ \\
+\end{center}
+
+\begin{text}
+Using the filtering property:\\
+\end{text}
+\begin{center}
+    $P(Y) = P(X)  \cdot \frac{1}{f^{'}(x)} \big|_{x=f^{-1}(y)} $\\
+\end{center}
+
+\begin{text}
+\ \\
+
+Where $P(X)$ is evaluated at $x=f^{-1}(y)$ \\
+\end{text}
+
+\begin{text}
+This is a very important result, but notice that this expression is true only for monotonic functions. If you are dealing with non-monotonic functions, you can divide the function in monotonic intervals and then apply the Change of Variables technique.
+\end{text}
+
+
+
+\end{document}
