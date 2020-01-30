@@ -1,0 +1,75 @@
+\documentclass[paper=9in:6in,pagesize=pdftex,headinclude=on,footinclude=on,10pt,bibtotoc,pointlessnumbers,normalheadings,DIV=9,twoside=false]{scrbook}
+
+\areaset[0.50in]{4.5in}{8in}
+\KOMAoptions{DIV=last}
+
+\usepackage{trajan}
+ 
+\usepackage[utf8x]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{upgreek}
+\usepackage{float}
+\usepackage[normal,font={footnotesize,it}]{caption}
+
+\usepackage[sc]{mathpazo}
+\linespread{1.05} 
+
+
+\usepackage[english]{babel}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{MnSymbol}
+\usepackage{wasysym}
+\usepackage{amsfonts}
+\newtheorem{theorem}{Theorem}
+\renewcommand\qedsymbol{$\blacksquare$}
+\usepackage{indentfirst}
+
+
+\begin{document}
+\date{}
+
+\begin{center}
+\begin{large}
+ \textbf{Chebyshev's inequality \\}
+\end{large}
+\end{center}
+
+\begin{text} 
+ In this section we are going to proof the Chebyshev's inequality, this is a very important results that leads us to understand the relation between probability and frequency of an event. For the continuous case,  let be $P(x)$ the probability distribution of a random variable $X$ with mean $\mu$ and variance $\sigma^2$, we know that:
+\end{text}
+
+\begin{center}
+    $P(a \leq X \leq b) = \int\limits_{b}^{a} P(x) dx$ \\
+    $\int\limits_{-\infty}^{\infty} x \cdot P(x) dx = \mu $ \\
+    $\int\limits_{-\infty}^{\infty} x^2 \cdot P(x) dx = \sigma^2 + \mu^2$
+\end{center}
+
+\begin{text}
+Let $N$, $\epsilon$ $\in$ $\mathbb{R}$, so we have:
+\end{text}
+
+\begin{center}
+$P(\mid X- \mu \mid \geq N \sigma)= \int\limits_{\mid X- \mu \mid \geq N \sigma}^{} P(x)  dx$ \hspace{2cm} Since $\frac{\mid X- \mu \mid}{N \sigma} \geq 1$ :
+
+$P(\mid X- \mu \mid \geq N \sigma)= \int\limits_{\mid X- \mu \mid \geq N \sigma}^{} P(x)  dx$ $\leq$ $ \int\limits_{\mid X- \mu \mid \geq N \sigma}^{} \frac{(X- \mu)^2}{N^2 \sigma^2} \cdot P(x)  dx$ $\leq$ $\frac{1}{N^2 \sigma^2}\int\limits_{-\infty}^{\infty} (X- \mu)^2 \cdot P(x)  dx = \frac{1}{N^2}$
+\end{center}
+
+\begin{text}
+Let $\epsilon = N\sigma$ so: \\
+\end{text}
+
+\begin{center}
+   $ P(\mid X- \mu \mid \geq \epsilon) \leq \frac{\sigma^2}{\epsilon^2}$ \\
+   \end{center}
+   
+   \begin{center}
+   $P(\mid X- \mu \mid < \epsilon) > 1 -  \frac{\sigma^2}{\epsilon^2}$
+    \end{center}
+    
+    \begin{text}
+    For the discrete case
+    \end{text}
+
+
+\end{document}
