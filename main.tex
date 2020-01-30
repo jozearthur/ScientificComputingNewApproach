@@ -1,0 +1,92 @@
+\documentclass[paper=9in:6in,pagesize=pdftex,headinclude=on,footinclude=on,10pt,bibtotoc,pointlessnumbers,normalheadings,DIV=9,twoside=false]{scrbook}
+
+\areaset[0.50in]{4.5in}{8in}
+\KOMAoptions{DIV=last}
+
+\usepackage{trajan}
+ 
+\usepackage[utf8x]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{upgreek}
+\usepackage{float}
+\usepackage[normal,font={footnotesize,it}]{caption}
+
+\usepackage[sc]{mathpazo}
+\linespread{1.05} 
+
+
+\usepackage[english]{babel}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{MnSymbol}
+\usepackage{wasysym}
+\usepackage{amsfonts}
+\newtheorem{theorem}{Theorem}
+\renewcommand\qedsymbol{$\blacksquare$}
+
+
+\title{Probalibility}
+
+\begin{document}
+\date{}
+
+\maketitle
+
+\section{ The language of probability \\} 
+
+\begin{large} 
+ \emph{Kolmogorov definitions:}
+\end{large} 
+\begin{itemize} 
+\item We define $\omega$ as the set of all possible elementary events. $\omega$ is called the sample space of the experiment
+
+\item We define $\Sigma$ as a set of subsets of $\omega$ , $\Sigma$ is a set of random events (combination of elementary events) with the following properties:
+
+\subitem if  $A,B$ $\in$   $\Sigma$ then $A \cap  B$ and $A \cup B $ $\in$ $\Sigma$
+\subitem $\omega$ $\in$ $\Sigma$
+\subitem $\emptyset$ $\in$ $\Sigma$
+
+\item Let $A$ $\in$ $\Sigma$, we define the Probability of $A$ as a non negative real number, that can be assigned for all $A$ $\in$ $\Sigma$. $\exists$ $P(A)$$\geq0 $ with the following properties:
+
+\subitem $ P(\omega)=1$
+
+\subitem  let $A,B$ $\in$   $\Sigma$, if $A \cap B = \emptyset$ $\implies$ $P(A\cup B) = P(A) + P(B) $
+
+
+
+\end{itemize}
+
+
+
+\begin{large}
+\emph{ Alternative definitions:}
+\end{large} 
+\begin{itemize} 
+\item We define $\omega$ as the set of all possible elementary events 
+
+\item We define $\Sigma$ as a $\sigma$-algebra  of random events (combination of elementary events) with the following properties:
+
+\subitem $\Sigma$ contains at least one subset of $\omega$
+\subitem if  $A$ $\in$   $\Sigma$ $\implies$ $\omega$/$A$ $\in$ $\Sigma$
+\subitem if $A_1, A_2 \dots{} A_n \in \Sigma$  $\Longrightarrow$  $ \bigcup\limits_{i = 1 }^n A_i$ $\in \Sigma$
+
+\item An arbitrary element of $\Sigma$ is called a random event
+
+\item Let $A$ $\in$ $\Sigma$, we define the Probability of $A$ as a non negative real number, that can be assigned for all $A$ $\in$ $\Sigma$. $\exists$ $P(A)$$\geq0 $ with the following properties:
+
+\subitem $ P(\omega)$=1 
+
+\subitem  let $A,B$ $\in$   $\Sigma$, if $A \cap B$ $= \emptyset$ $\Longrightarrow$ $ P(A\cup B) = P(A) + P(B) $ 
+
+
+\end{itemize}
+
+
+
+
+
+
+
+
+
+\end{document}
