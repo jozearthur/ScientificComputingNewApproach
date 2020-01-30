@@ -1,0 +1,120 @@
+\documentclass[paper=9in:6in,pagesize=pdftex,headinclude=on,footinclude=on,10pt,bibtotoc,pointlessnumbers,normalheadings,DIV=9,twoside=false]{scrbook}
+
+\areaset[0.50in]{4.5in}{8in}
+\KOMAoptions{DIV=last}
+
+\usepackage{trajan}
+ 
+\usepackage[utf8x]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{upgreek}
+\usepackage{float}
+\usepackage[normal,font={footnotesize,it}]{caption}
+
+\usepackage[sc]{mathpazo}
+\linespread{1.05} 
+
+
+\usepackage[english]{babel}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{MnSymbol}
+\usepackage{wasysym}
+\usepackage{amsfonts}
+\newtheorem{theorem}{Theorem}
+\renewcommand\qedsymbol{$\blacksquare$}
+
+
+\begin{document}
+\date{}
+
+
+\begin{large} 
+ \textbf{Exercise}
+\end{large} 
+\begin{itemize} 
+\item The motion of a drunk particle can be described as series of independent steps of length $a$. Each step makes an angle $\theta$  with the z axis, with a probability density $P(\theta)= (1+\cos{\theta})/\pi$ while the angle $\phi$ is uniformly distributed between 0 and $2\pi$. The drunk particle starts at origin and make a large number of steps $N$. Find the expectation values: $E[z]$, $E[x^2]$, $E[y^2]$ and $E[z^2]$.
+\end{itemize}
+
+\begin{large}
+\textit{Solution:\\}
+\end{large}
+
+\begin{text}
+We can write:\\
+
+\begin{center}
+$E[z]= E[a\cos{\theta_1}+a\cos{\theta_2}+...+a\cos{\theta_{N}}]= aN \cdotp E[\cos{\theta}]$\\
+\end{center}
+\end{text}
+
+\begin{center}
+
+$E[\cos{\theta}]= \int_{0}^{\pi} \frac{1}{\pi} \cos{\theta}\cdotp(1+\cos{\theta}) d\theta = \frac{1}{2}$\\
+\end{center}
+\begin{center}
+$E[z]=\frac{aN}{2}$\\
+\end{center}
+
+\begin{text}
+Using spherical coordinates we know: \\
+\end{text}
+
+\begin{center}
+$x_{i}= a\sin{\theta_{i}}\cos{\phi_{i}}$ \\
+\end{center}
+
+\begin{text}
+We know that:\\
+\end{text}
+
+\begin{center}
+$E[x^2]= E[(\sum_{i=1}^{N} x_i)^2]= E[\sum_{i=1}^{N} x_i\sum_{j=1}^{N} x_j] = E[\sum\limits_{i=j}^{N}\sum\limits_{i\neq j}^{}x_i\cdotp x_j + \sum\limits_{i=j}^{}x_i^2]$\\
+\end{center}
+\begin{text}
+Since $x_j$ and $x_i$ are independents we have:\\
+\end{text}
+
+\begin{center}
+$E[x^2]= \sum\limits_{i=j}^{N}\sum\limits_{i\neq j}^{}E[x_i]\cdotp E[x_j] + \sum\limits_{i=j}^{}E[x_i^2]$\\
+\end{center}
+
+\begin{text}
+ by geometrical and symmetrical arguments $E[x_{i}]=0$,  so we have:
+\end{text}
+
+\begin{center}
+    $E[x^2]=  \sum\limits_{i=j}^{}E[x_i^2]=N\cdotp E[x_i^2]$ and $x_i^2=a^2\sin^2{\theta_{i}}\cos^2{\phi_{i}}$\\
+\end{center}
+\begin{center}
+    $E[x_i^2]=a^2\int_{0}^{\pi} \frac{1}{\pi} \sin^2{\theta}\cdotp(1+\cos{\theta}) d\theta\int_{0}^{2\pi}\frac{1}{2\pi}cos^2{\phi} d\phi = \frac{a^2}{4}$ \\
+\end{center}
+
+\begin{center}
+    $E[x^2]= \frac{N\cdotp a^2}{4}$ \\
+\end{center}
+
+\begin{text}
+By symmetry:\\
+\end{text}
+\begin{center}
+    $E[y^2]= \frac{N\cdotp a^2}{4}$ \\
+\end{center}
+
+\begin{text}
+For $z$ we have:\\
+\end{text}
+
+\begin{center}
+  $E[z^2]= \sum\limits_{i=j}^{N}\sum\limits_{i\neq j}^{}E[z_i]\cdotp E[z_j] + \sum\limits_{i=j}^{}E[z_i^2]= N(N-1)\cdotp E[z]^2 + N E[z_i^2]$ \\  
+\end{center}
+\begin{text}
+We know that $E[z]=\frac{aN}{2}$ and $E[z_i^2] = a^2 \int_{0}^{\pi} \frac{1}{\pi} \cos^2{\theta}\cdotp(1+\cos{\theta}) d\theta=\frac{a^2}{2}$ so:\\
+\end{text}
+\begin{center}
+  $E[z^2]=\frac{N(N+1)\cdotp a^2 }{4} $
+\end{center}
+
+
+
+\end{document}
