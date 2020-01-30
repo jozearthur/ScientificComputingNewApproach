@@ -1,0 +1,88 @@
+\documentclass[paper=9in:6in,pagesize=pdftex,headinclude=on,footinclude=on,10pt,bibtotoc,pointlessnumbers,normalheadings,DIV=9,twoside=false]{scrbook}
+
+\areaset[0.50in]{4.5in}{8in}
+\KOMAoptions{DIV=last}
+
+\usepackage{trajan}
+ 
+\usepackage[utf8x]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{upgreek}
+\usepackage{float}
+\usepackage[normal,font={footnotesize,it}]{caption}
+
+\usepackage[sc]{mathpazo}
+\linespread{1.05} 
+
+
+\usepackage[english]{babel}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{MnSymbol}
+\usepackage{wasysym}
+\usepackage{amsfonts}
+\newtheorem{theorem}{Theorem}
+\renewcommand\qedsymbol{$\blacksquare$}
+
+
+\begin{document}
+\date{}
+
+
+\begin{large} 
+ \textbf{Exercise}
+\end{large} 
+\begin{itemize} 
+\item Let be $X$ a random variable linearly distributed in the $[0,1] $ interval, if $Y$ is another random variable such that $y = \sqrt{x}$, find the probability distribution of $Y$.
+\end{itemize}
+
+\begin{large}
+\textit{Solution:\\}
+\end{large}
+ \begin{text}
+ \ \\
+ \indent Since X is linearly distributed we know that: \\
+ \end{text}
+ 
+ \begin{center}
+     $P(X) =  Ax$ \\
+     \ \\
+    $ \int\limits_{0}^{1} P(x) dx = 1 \implies \frac{Ax^2}{2}  \Big|_0^1 = 1 \implies A=2$ \\
+    \ \\
+    $P(X)= 2x$
+ \end{center}
+ 
+\begin{text}
+In the section: Change of Variables, we proof that: \\ 
+\end{text}
+
+\begin{center}
+$P(Y)=  \frac{1}{y^{'}(x)} \cdot P(x)\big|_{x=y^2}$  \\
+\end{center}
+
+\begin{text}
+We know that:
+\end{text}
+
+\begin{center}
+$y^{'}(x) \big|_{x=y^2}=  \frac{1}{2\sqrt{x}} = \frac{1}{2y}$ \\
+\ \\
+$P(x)\big|_{x=y^2} = 2y^2$ \\
+\end{center}
+
+\begin{text}
+So we have:
+\end{text}
+
+\begin{center}
+$P(Y) = 4y^3$
+\end{center}
+
+
+
+
+
+
+
+
+\end{document}
