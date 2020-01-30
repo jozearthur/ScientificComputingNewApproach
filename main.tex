@@ -1,0 +1,68 @@
+\documentclass[paper=9in:6in,pagesize=pdftex,headinclude=on,footinclude=on,10pt,bibtotoc,pointlessnumbers,normalheadings,DIV=9,twoside=false]{scrbook}
+
+\areaset[0.50in]{4.5in}{8in}
+\KOMAoptions{DIV=last}
+
+\usepackage{trajan}
+ 
+\usepackage[utf8x]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{upgreek}
+\usepackage{float}
+\usepackage[normal,font={footnotesize,it}]{caption}
+
+\usepackage[sc]{mathpazo}
+\linespread{1.05} 
+
+
+\usepackage[english]{babel}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{MnSymbol}
+\usepackage{wasysym}
+\usepackage{amsfonts}
+\newtheorem{theorem}{Theorem}
+\renewcommand\qedsymbol{$\blacksquare$}
+
+
+\begin{document}
+\date{}
+
+
+\begin{large} 
+ \textbf{Exercise}
+\end{large} 
+\begin{itemize} 
+\item Let be the difference equation $y_{n+1} =\frac{a y_n}{1+ b y_n}$, Find the fixed points of the equation. Where a and b are real number such that $a>1$ and $b \neq 0$.\\
+\end{itemize}
+
+\begin{large}
+\textit{Solution:\\}
+\end{large}
+
+ 
+\begin{text}
+Let $y_{n+1} = f(y_n)$. A point $y_*$ in the domain of f is said to be an equilibrium point of the difference equation if it is a fixed point of f , i.e., $f(y_*) = y_*$. So we have:
+\end{text}
+
+\begin{center}
+$f(y_*)= \frac{ay_*}{1+by_*} = y_* $ \ \\
+\ \\
+$y_* + by_*^2 = ay_* $ \ \\
+
+\ \\
+
+ $y_* = 0$ \hspace{1cm} $ y_* = \frac{a-1}{b}$
+\end{center}
+
+
+
+
+
+
+
+
+
+
+
+\end{document}
