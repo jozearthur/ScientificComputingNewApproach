@@ -1,0 +1,96 @@
+\documentclass[paper=9in:6in,pagesize=pdftex,headinclude=on,footinclude=on,10pt,bibtotoc,pointlessnumbers,normalheadings,DIV=9,twoside=false]{scrbook}
+
+\areaset[0.50in]{4.5in}{8in}
+\KOMAoptions{DIV=last}
+
+\usepackage{trajan}
+ 
+\usepackage[utf8x]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{upgreek}
+\usepackage{float}
+\usepackage[normal,font={footnotesize,it}]{caption}
+
+\usepackage[sc]{mathpazo}
+\linespread{1.05} 
+
+
+\usepackage[english]{babel}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{MnSymbol}
+\usepackage{wasysym}
+\usepackage{amsfonts}
+\newtheorem{theorem}{Theorem}
+\renewcommand\qedsymbol{$\blacksquare$}
+
+
+\begin{document}
+\date{}
+
+
+\begin{large} 
+ \textbf{Solving Gaussian Integrals \\}
+\end{large} 
+
+\begin{text}
+In this section we will show how to solve some Gaussian integrals, first of all, lets look to the simple one:  $I = \int\limits_{-\infty}^{\infty} e^{-x^2} dx$. \\
+\end{text}
+
+\begin{center}
+    $I^2 = \int\limits_{-\infty}^{\infty} e^{-x^2} dx \cdot \int\limits_{-\infty}^{\infty} e^{-x^2} dx = \int\limits_{-\infty}^{\infty} e^{-x^2} dx \cdot \int\limits_{-\infty}^{\infty} e^{-y^2} dy$
+\end{center}
+
+\begin{text}
+We now introduce an other 2 variables $r^2=x^2+y^2$ and $\theta = \arctan \frac{x}{y}$ hence:
+\end{text}
+
+\begin{center}
+    $I^2 = \int\limits_{-\infty}^{\infty} \int\limits_{-\infty}^{\infty} e^{-(x^2+y^2)} dxdy = \int\limits_{0}^{\infty}\int\limits_{0}^{2\pi} r e^{-r^2}drd\theta = \int\limits_{0}^{2\pi} d\theta \int\limits_{0}^{\infty} re^{-r^2} dr$
+\end{center}
+
+
+\begin{text}
+Let be $u=-r^2 \implies 2rdr = -du$, so we have:
+\end{text}
+
+\begin{center}
+    $I^2 = -\pi \int\limits_{0}^{-\infty} e^u du = \pi$ \\
+    
+    \ \\
+    
+   $ \int\limits_{-\infty}^{\infty} e^{-x^2} dx = \sqrt{\pi}$ \\
+\end{center}
+
+\begin{text}
+
+To find $\int\limits_{-\infty}^{\infty} e^{\frac{-(x-\mu)^2}{2\sigma^2}}dx$, we make a simple substitution $u = \frac{(x-\mu)}{\sqrt{2}\sigma}$: \\
+
+\end{text}
+
+\begin{center}
+    $\int\limits_{-\infty}^{\infty} e^{\frac{-(x-\mu)^2}{2\sigma^2}}dx = \int\limits_{-\infty}^{\infty} \sqrt{2}\sigma e^{-u^2}du = \frac{}{} = \sqrt{2\pi}\sigma$. \\
+\end{center}
+
+\begin{text}
+To find the expected value of x we need to solve the integral $\int\limits_{-\infty}^{\infty} \frac{1}{\sqrt{2\pi}\sigma} x e^{\frac{-(x-\mu)^2}{2\sigma^2}}dx $ and again we will use a simple substitution $\frac{(x-\mu)^2}{2\sigma^2} = u^2 \implies udu = \frac{1}{\sqrt{2\pi}\sigma} (xdx -  \mu dx)$, so we have: \\
+\end{text}
+
+\begin{center}
+$\int\limits_{-\infty}^{\infty} \frac{1}{\sqrt{2\pi}\sigma} x e^{\frac{-(x-\mu)^2}{2\sigma^2}}dx = \int\limits_{-\infty}^{\infty} \frac{1}{\sqrt{2\pi}\sigma}  e^{\frac{-(x-\mu)^2}{2\sigma^2}} \mu dx + \int\limits_{-\infty}^{\infty} u  e^{-u^2}du  $    
+\end{center}
+
+\begin{text}
+We already solve the first integral, it is equal $\mu$, the second one it is just 0 because is an integral of odd function. Finally we have:
+\end{text}
+
+\begin{center}
+    $<x> = \int\limits_{-\infty}^{\infty} \frac{1}{\sqrt{2\pi}\sigma} x e^{\frac{-(x-\mu)^2}{2\sigma^2}}dx = \mu $
+\end{center}
+
+
+
+
+
+
+\end{document}
